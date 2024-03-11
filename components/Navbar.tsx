@@ -18,7 +18,7 @@ export default function Navbar() {
         <Link
           key={index}
           href={link.href}
-          className={`px-4 py-2 lg:text-lg ${pathname === link.href ? 'font-semibold text-white' : 'font-semibold text-foreground duration-200 hover:text-white'}`}
+          className={`px-4 py-2 font-medium lg:text-lg ${pathname === link.href ? ' text-primary' : 'text-foreground duration-200 hover:text-primary'}`}
         >
           {link.name}
         </Link>
