@@ -1,5 +1,4 @@
 import Hero from '@/components/Hero';
-import TopProducts from '@/components/NewProducts';
 import NewProducts from '@/components/NewProducts';
 import { getData, urlFor } from '@/lib/sanity';
 import Image from 'next/image';
@@ -12,7 +11,7 @@ export default async function Home() {
   return (
     <>
       <Hero />
-      <TopProducts />
+      <NewProducts />
       {/* <Image
         src={urlFor(product.image).url()}
         alt="image"
