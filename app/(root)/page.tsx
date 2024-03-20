@@ -1,14 +1,24 @@
 import Hero from '@/components/Hero';
-import Navbar from '@/components/Navbar';
-import { client } from '@/lib/sanity';
+import TopProducts from '@/components/NewProducts';
+import NewProducts from '@/components/NewProducts';
+import { getData, urlFor } from '@/lib/sanity';
+import Image from 'next/image';
 
 export default async function Home() {
-  // const products = await client.fetch(`*[_type == "product"]`);
-  // console.log(products);
+  // const query = `*[_type == "product"][0]`;
+  // const product = await getData(query);
+  // console.log(product);
 
   return (
     <>
       <Hero />
+      <TopProducts />
+      {/* <Image
+        src={urlFor(product.image).url()}
+        alt="image"
+        width={400}
+        height={400}
+      /> */}
     </>
   );
 }
