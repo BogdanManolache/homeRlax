@@ -13,7 +13,7 @@ export default function Hero() {
           shop!
         </h1>
         <div className="hidden gap-4 sm:flex">
-          <Link href="/products">
+          <Link href="/products?category=All">
             <Button>Shop Now</Button>
           </Link>
 

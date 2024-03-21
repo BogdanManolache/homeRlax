@@ -3,15 +3,7 @@ import { Button } from './ui/button';
 import { getData } from '@/lib/sanity';
 import { ArrowRight } from 'lucide-react';
 import Image from 'next/image';
-
-type NewProduct = {
-  _id: string;
-  name: string;
-  price: number;
-  slug: string;
-  categoryName: string;
-  imageUrl: string;
-};
+import { type ProductSummary } from '@/types';
 
 const query = `
 *[_type == "product"]|order(_createdAt desc) [0...4]{
@@ -25,18 +17,17 @@ const query = `
 `;
 
 export default async function NewProducts() {
-  const newProducts: NewProduct[] = await getData(query);
-  console.log(newProducts);
+  const newProducts: ProductSummary[] = await getData(query);
 
   return (
-    <section className=" gapt-4 mb-16 flex max-w-2xl flex-col justify-between pt-2 sm:gap-8 sm:pt-8 md:max-w-7xl">
+    <section className="mb-16 flex max-w-2xl flex-col justify-between gap-4 pt-4 sm:gap-8 sm:pt-8 md:max-w-7xl">
       <h2 className="text-xl font-semibold text-foreground sm:text-2xl">
         Our newest products
       </h2>
       <ul className="mt-6 grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-4 xl:gap-x-8">
         {newProducts.map(product => (
           <li key={product._id} className="group relative">
-            <div className="aspect-h-1 aspect-w-1 lg:aspect-none w-full overflow-hidden rounded-md bg-card group-hover:opacity-75 lg:h-80">
+            <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-md bg-card lg:aspect-none group-hover:opacity-75 lg:h-80">
               <Image
                 src={product.imageUrl}
                 alt={product.name}
@@ -65,7 +56,7 @@ export default async function NewProducts() {
         ))}
       </ul>
       <Button variant={'link'} className="self-end">
-        <Link href="/products" className="flex items-center gap-1">
+        <Link href="/products?category=All" className="flex items-center gap-1">
           <span>All products</span>
           <ArrowRight />
         </Link>
