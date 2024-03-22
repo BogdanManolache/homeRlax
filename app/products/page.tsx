@@ -1,22 +1,43 @@
-import ProductsFilter from '@/components/ProductsFilter';
+import ProductsFilter from '@/components/products/ProductsFilter';
+import ProductsList from '@/components/products/ProductsList';
+import { getData } from '@/lib/sanity';
+import { type Product } from '@/types';
 
 type ProductsPageProps = {
   searchParams: { category: string | undefined };
 };
 
-export default function ProductsPage({ searchParams }: ProductsPageProps) {
+const query = `
+*[_type == "product"]{
+  _id,
+  name,
+  price,
+  "imageUrl":image.asset->url,
+  "slug":slug.current,
+  "categoryName":category->name,
+}
+`;
+
+export default async function ProductsPage({
+  searchParams,
+}: ProductsPageProps) {
   const { category } = searchParams;
-  console.log(category);
+
+  const products: Product[] = await getData(query);
+  const productsList =
+    !category || category === 'All'
+      ? products
+      : products.filter(prod => prod.categoryName === category);
 
   return (
-    <section className="mb-8 mt-4 flex max-w-2xl flex-col justify-between gap-4 sm:gap-8 md:max-w-7xl">
-      <div className="flex items-center justify-between">
+    <section className="mb-16 mt-2 flex max-w-2xl flex-col justify-between gap-4 sm:gap-8 md:max-w-7xl">
+      <div className="sticky top-0 z-50 flex flex-col items-center justify-between gap-4 bg-background py-4 sm:flex-row">
         <h2 className="text-2xl font-semibold text-foreground sm:text-3xl">
           Our <span className="text-primary">comfy</span> products
         </h2>
         <ProductsFilter />
       </div>
-      <ul>{category}</ul>
+      <ProductsList productsList={productsList} />
     </section>
   );
 }

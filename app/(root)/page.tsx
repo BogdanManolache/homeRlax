@@ -1,7 +1,5 @@
 import Hero from '@/components/Hero';
-import NewProducts from '@/components/NewProducts';
-import { getData, urlFor } from '@/lib/sanity';
-import Image from 'next/image';
+import NewProducts from '@/components/new-products/NewProducts';
 
 export default async function Home() {
   // const query = `*[_type == "product"][0]`;
