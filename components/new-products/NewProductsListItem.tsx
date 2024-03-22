@@ -22,7 +22,7 @@ export default function NewProductsListItem({ product }: { product: Product }) {
               {product.name}
             </Link>
           </h3>
-          <p className="mt-1 text-sm text-muted-foreground">
+          <p className="mt-1 text-xs uppercase text-muted-foreground">
             {product.categoryName}
           </p>
         </div>

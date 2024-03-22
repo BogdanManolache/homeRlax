@@ -1,16 +1,21 @@
 import Image from 'next/image';
 import aboutImg from '../../public/images/customers.jpg';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'About us',
+};
 
 export default function AboutPage() {
   return (
-    <section className="container mx-auto p-4">
-      <div className="mb-8 text-center">
+    <section className="mb-16 mt-2 flex max-w-2xl flex-col justify-between gap-8 p-4 md:max-w-7xl">
+      <div className="text-center">
         <Image
           src={aboutImg}
           alt="Customers relaxing"
           className="mx-auto mb-8 rounded-full shadow-md"
         />
-        <h2 className="mb-8 text-lg font-semibold uppercase tracking-widest text-muted-foreground">
+        <h2 className=" text-lg font-semibold uppercase tracking-widest text-muted-foreground">
           about us
         </h2>
       </div>

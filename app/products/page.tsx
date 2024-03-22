@@ -2,6 +2,11 @@ import ProductsFilter from '@/components/products/ProductsFilter';
 import ProductsList from '@/components/products/ProductsList';
 import { getData } from '@/lib/sanity';
 import { type Product } from '@/types';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Products',
+};
 
 type ProductsPageProps = {
   searchParams: { category: string | undefined };

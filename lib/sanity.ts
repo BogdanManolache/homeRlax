@@ -1,3 +1,4 @@
+import { Product } from '@/types';
 import imageUrlBuilder from '@sanity/image-url';
 import { createClient } from 'next-sanity';
 

@@ -10,7 +10,10 @@ const poppins = Poppins({
 });
 
 export const metadata: Metadata = {
-  title: 'homeRlax',
+  title: {
+    default: 'homeRlax',
+    template: 'homeRlax | %s',
+  },
   description: 'Your cozy furniture online shop',
 };
 
