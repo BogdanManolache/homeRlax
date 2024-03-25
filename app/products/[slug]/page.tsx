@@ -49,7 +49,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
   const product: Product = await getData(query);
 
   return (
-    <section className="mb-16 mt-2 flex max-w-2xl items-center justify-center px-4 py-2 sm:px-8 sm:py-4 md:max-w-7xl">
+    <section className="mb-32 mt-24 flex max-w-2xl items-center justify-center px-4 py-2 sm:px-8 sm:py-4 md:max-w-7xl">
       <article className="flex flex-col gap-8 md:flex-row">
         <div className="flex-1">
           <Image

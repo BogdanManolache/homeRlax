@@ -21,7 +21,7 @@ export default function AboutPage() {
       </div>
 
       <div className="mx-auto max-w-3xl">
-        <p className="mb-6 leading-relaxed text-gray-700">
+        <p className="mb-6 leading-relaxed">
           Nestled in the virtual realm, homeRlax emerges as a haven for weary
           souls seeking solace in the embrace of comfort. A beacon of
           tranquility amidst the chaos of the digital age, this online furniture
@@ -37,7 +37,7 @@ export default function AboutPage() {
           cyberspace to the confines of one&apos;s living room.
         </p>
 
-        <p className="mb-6  leading-relaxed text-gray-700">
+        <p className="mb-6  leading-relaxed">
           At the heart of homeRlax lies a profound understanding of the profound
           impact that one&apos;s surroundings can have on their well-being.
           Beyond mere furniture, this virtual sanctuary offers a sanctuary for
@@ -50,7 +50,7 @@ export default function AboutPage() {
           breathe, and to cherish the simple joys of comfort.
         </p>
 
-        <p className="mb-6  leading-relaxed text-gray-700">
+        <p className="mb-6  leading-relaxed">
           As patrons navigate the labyrinthine expanse of homeRlax, they are
           guided by a philosophy that transcends mere commerce. More than just a
           marketplace, this virtual oasis serves as a testament to the
