@@ -1,7 +1,9 @@
+import AddToCartButton from '@/components/shopping-cart/AddToCartButton';
+import GoToCheckoutButton from '@/components/shopping-cart/GoToCheckoutButton';
 import { Button } from '@/components/ui/button';
 import { getData } from '@/lib/sanity';
 import { Product } from '@/types';
-import { Truck, ShoppingCart, ArrowRightIcon, User } from 'lucide-react';
+import { Truck, User } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -96,14 +98,15 @@ export default async function ProductPage({ params }: ProductPageProps) {
 
           {true ? (
             <div className="mb-4 flex gap-4">
-              <Button className="flex items-center gap-1">
-                <span>Add to Cart</span>
-                <ShoppingCart />
-              </Button>
-              <Button variant="outline" className="flex items-center gap-1">
-                <span>Go to Checkout</span>
-                <ArrowRightIcon />
-              </Button>
+              <AddToCartButton
+                id={product._id}
+                name={product.name}
+                description={product.description}
+                currency="EUR"
+                imageUrl={product.imageUrl}
+                price={product.price}
+              />
+              <GoToCheckoutButton variant="outline" />
             </div>
           ) : (
             <Link href="/sign-in" className="mb-4">

@@ -8,7 +8,7 @@ import logoSvg from '../public/Logo.svg';
 import { Button } from './ui/button';
 import { User } from 'lucide-react';
 import { ModeToggle } from './ModeToggle';
-import ShoppingCartDrawer from './ShoppingCartDrawer';
+import ShoppingCartDrawer from './shopping-cart/ShoppingCartDrawer';
 
 export default function Header() {
   return (

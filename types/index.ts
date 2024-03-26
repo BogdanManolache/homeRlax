@@ -7,3 +7,12 @@ export type Product = {
   imageUrl: string;
   description?: string;
 };
+
+export type CartItem = {
+  id: string;
+  name: string;
+  price: number;
+  description: string | undefined;
+  currency: string;
+  imageUrl: string;
+};
