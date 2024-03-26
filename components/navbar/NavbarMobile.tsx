@@ -3,7 +3,7 @@
 import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 
 import { Menu } from 'lucide-react';
-import { Button } from './ui/button';
+import { Button } from '../ui/button';
 import Link from 'next/link';
 import { useState } from 'react';
 
@@ -22,7 +22,7 @@ export default function NavbarMobile() {
           <Menu />
         </Button>
       </SheetTrigger>
-      <SheetContent side="left" className="w-full md:hidden">
+      <SheetContent side="left" className="w-[200px] md:hidden">
         <nav className="flex flex-col items-center">
           {links.map((link, index) => (
             <Link
@@ -39,17 +39,3 @@ export default function NavbarMobile() {
     </Sheet>
   );
 }
-
-/*
-<nav className="flex flex-col items-center">
-        {links.map((link, index) => (
-          <Link
-            key={index}
-            href={link.href}
-            className="px-4 py-2 font-medium text-foreground  duration-200 hover:text-primary lg:text-lg"
-          >
-            {link.name}
-          </Link>
-        ))}
-      </nav>
-*/

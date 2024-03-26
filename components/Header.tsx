@@ -1,19 +1,24 @@
 import Image from 'next/image';
-import Navbar from './Navbar';
 import Link from 'next/link';
 
+import Navbar from './navbar/Navbar';
+import NavbarMobile from './navbar/NavbarMobile';
 import logoSvg from '../public/Logo.svg';
+
 import { Button } from './ui/button';
-import { ShoppingCart, User } from 'lucide-react';
+import { User } from 'lucide-react';
 import { ModeToggle } from './ModeToggle';
-import NavbarMobile from './NavbarMobile';
+import ShoppingCartDrawer from './ShoppingCartDrawer';
 
 export default function Header() {
   return (
-    <header className="mx-auto mb-6 flex max-w-2xl items-center justify-between border-b pr-4 sm:pr-6 md:max-w-7xl">
+    <header className="mx-auto flex max-w-2xl items-center justify-between border-b pr-4 sm:pr-6 md:max-w-7xl">
       <div className="flex items-center">
         <NavbarMobile />
-        <Link href="/" className="ml-4 flex items-center py-2 md:ml-6">
+        <Link
+          href="/"
+          className="sm:md-0 ml-4 mr-4 flex items-center py-2 md:ml-6"
+        >
           <span className="hidden text-3xl tracking-wider text-primary md:inline-block">
             HOME
           </span>
@@ -32,13 +37,14 @@ export default function Header() {
           <User />
           <span className="hidden text-xs sm:block">Account</span>
         </Button>
-        <Button
+        {/* <Button
           variant={'ghost'}
           className="flex flex-col gap-1 sm:h-20 sm:w-20"
         >
           <ShoppingCart />
           <span className="hidden text-xs sm:block">Cart</span>
-        </Button>
+        </Button> */}
+        <ShoppingCartDrawer />
       </div>
     </header>
   );

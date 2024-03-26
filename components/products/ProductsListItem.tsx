@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 export default function ProductsListItem({ product }: { product: Product }) {
   return (
-    <Link href={`/products/${product.slug}#product`} className="group">
+    <Link href={`/products/${product.slug}`} className="group">
       <li className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
         <Image
           src={product.imageUrl}

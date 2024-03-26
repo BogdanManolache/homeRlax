@@ -50,7 +50,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
 
   return (
     <section
-      className="mx-auto flex min-h-screen max-w-2xl items-center justify-center px-4 py-2 sm:px-8 sm:py-4 md:max-w-7xl"
+      className="mx-auto mt-6 flex min-h-[90vh] max-w-2xl items-center justify-center px-4 py-2 sm:px-8 sm:py-4 md:mt-0 md:max-w-7xl"
       id="product"
     >
       <article className="flex flex-col gap-8 md:flex-row">
