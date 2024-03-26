@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
   return (
-    <section className="mb-16 mt-2 flex max-w-2xl flex-col justify-between gap-8 p-4 md:max-w-7xl">
+    <section className="mx-auto mb-16 mt-8 flex max-w-2xl flex-col justify-between gap-8 p-4 md:max-w-7xl">
       <div className="text-center">
         <Image
           src={aboutImg}
@@ -50,7 +50,7 @@ export default function AboutPage() {
           breathe, and to cherish the simple joys of comfort.
         </p>
 
-        <p className="mb-6  leading-relaxed">
+        <p className="leading-relaxed">
           As patrons navigate the labyrinthine expanse of homeRlax, they are
           guided by a philosophy that transcends mere commerce. More than just a
           marketplace, this virtual oasis serves as a testament to the

@@ -20,7 +20,7 @@ export default async function NewProducts() {
   const newProducts: Product[] = await getData(query);
 
   return (
-    <section className="mb-16 flex max-w-2xl flex-col justify-between gap-4 pt-4 sm:gap-8 sm:pt-8 md:max-w-7xl">
+    <section className="mx-auto mb-16 flex max-w-2xl flex-col justify-between gap-4 pt-4 sm:gap-8 sm:pt-8 md:max-w-7xl">
       <h2 className="text-xl font-semibold text-foreground sm:text-2xl">
         Our newest arrivals
       </h2>

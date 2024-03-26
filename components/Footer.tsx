@@ -4,12 +4,10 @@ import { Facebook, Instagram, Twitter } from 'lucide-react';
 
 export default function Footer() {
   return (
-    <footer className="grid gap-8  px-4 py-2  sm:grid-cols-2">
+    <footer className="mx-auto grid max-w-2xl gap-8 p-4 sm:grid-cols-2 md:max-w-7xl">
       <div className="flex flex-col items-center gap-4">
-        <div className="flex items-center gap-0.5 font-semibold">
-          <span className="font-semibold tracking-wider text-primary">
-            HOME
-          </span>
+        <div className="flex items-center">
+          <span className="tracking-wider text-primary">HOME</span>
           <Image src={logoImg} alt="Logo" />
         </div>
         <ul className="flex flex-col gap-4 text-sm text-muted-foreground">
@@ -26,7 +24,7 @@ export default function Footer() {
         </div>
       </div>
       <div>
-        <h4 className="text-md mb-[24px] pt-4 text-center font-semibold text-primary">
+        <h4 className="text-md mb-[24px] pt-4 text-center text-primary">
           Company
         </h4>
         <ul className="flex flex-col flex-wrap items-center gap-4 text-sm text-muted-foreground">
@@ -36,7 +34,7 @@ export default function Footer() {
           <li>Shipping</li>
         </ul>
       </div>
-      <p className="col-span-2 my-4 text-center text-xs text-muted-foreground">
+      <p className="my-4 text-center text-xs text-muted-foreground sm:col-span-2">
         Copyright &copy; {new Date().getFullYear()}. All rights reserved.
       </p>
     </footer>

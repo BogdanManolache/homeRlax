@@ -24,9 +24,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning className={poppins.className}>
       <body
-        className={`${poppins.className} mx-auto flex min-h-screen max-w-2xl flex-col bg-background text-foreground md:max-w-7xl`}
+        className={`${poppins.className}flex min-h-screen max-w-2xl flex-col  bg-background text-foreground md:max-w-full`}
       >
         <ThemeProvider
           attribute="class"
@@ -36,7 +36,9 @@ export default function RootLayout({
         >
           <Header />
 
-          <main className="flex-1 border-b px-4 sm:px-6">{children}</main>
+          <main className="mx-auto max-w-2xl flex-1 border-b px-4 sm:px-6 md:max-w-7xl">
+            {children}
+          </main>
 
           <Footer />
         </ThemeProvider>

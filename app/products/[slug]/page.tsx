@@ -49,7 +49,10 @@ export default async function ProductPage({ params }: ProductPageProps) {
   const product: Product = await getData(query);
 
   return (
-    <section className="mb-32 mt-24 flex max-w-2xl items-center justify-center px-4 py-2 sm:px-8 sm:py-4 md:max-w-7xl">
+    <section
+      className="mx-auto flex min-h-screen max-w-2xl items-center justify-center px-4 py-2 sm:px-8 sm:py-4 md:max-w-7xl"
+      id="product"
+    >
       <article className="flex flex-col gap-8 md:flex-row">
         <div className="flex-1">
           <Image
@@ -57,6 +60,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
             alt={product.name}
             width={1000}
             height={667}
+            priority
             className="h-full w-full object-cover object-center"
           />
         </div>
@@ -110,7 +114,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
             </Link>
           )}
 
-          <p className="text-base tracking-wide text-muted-foreground">
+          <p className="mb-6 text-base tracking-wide text-muted-foreground md:mb-0">
             {product.description}
           </p>
         </div>

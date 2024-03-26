@@ -17,7 +17,7 @@ export default function NewProductsListItem({ product }: { product: Product }) {
       <div className="mt-4 flex justify-between">
         <div>
           <h3 className="text-sm font-medium text-card-foreground">
-            <Link href={`/products/${product.slug}`}>
+            <Link href={`/products/${product.slug}#product`}>
               <span aria-hidden="true" className="absolute inset-0" />
               {product.name}
             </Link>

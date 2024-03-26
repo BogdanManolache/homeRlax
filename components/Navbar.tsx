@@ -13,7 +13,7 @@ export default function Navbar() {
   const pathname = usePathname();
 
   return (
-    <nav className="hidden gap-2 md:flex">
+    <nav className="hidden md:flex md:gap-1 lg:gap-2">
       {links.map((link, index) => (
         <Link
           key={index}

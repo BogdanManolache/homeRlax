@@ -6,7 +6,7 @@ import heroImg from '../public/images/hero.jpg';
 
 export default function Hero() {
   return (
-    <section className="mb-16 flex max-w-2xl flex-col items-center justify-between gap-2 pt-2 sm:flex-row sm:items-center sm:pt-8 md:max-w-7xl">
+    <section className="mx-auto mb-16 flex max-w-2xl flex-col items-center justify-between gap-2 pt-2 sm:flex-row sm:items-center sm:pt-8 md:max-w-7xl">
       <div className="order-last flex flex-1 flex-col justify-center gap-8 sm:order-1 sm:pl-12">
         <h1 className="mb-4 text-2xl font-semibold tracking-wider sm:mb-0 sm:text-3xl md:mb-8 md:text-4xl lg:text-5xl">
           Where <span className="text-primary">comfort</span> meets{' '}
