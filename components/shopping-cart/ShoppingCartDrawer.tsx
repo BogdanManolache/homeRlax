@@ -15,13 +15,26 @@ import GoToCheckoutButton from './GoToCheckoutButton';
 import ShoppingCartEntry from './ShoppingCartEntry';
 
 export default function ShoppingCartDrawer() {
-  const { cartCount, shouldDisplayCart, handleCartClick, cartDetails } =
-    useShoppingCart();
+  const {
+    cartCount,
+    shouldDisplayCart,
+    handleCartClick,
+    cartDetails,
+    totalPrice,
+  } = useShoppingCart();
 
   return (
     <Sheet open={shouldDisplayCart} onOpenChange={() => handleCartClick()}>
       <SheetTrigger asChild>
-        <Button variant="ghost" className="flex flex-col gap-1 sm:h-20 sm:w-20">
+        <Button
+          variant="ghost"
+          className="relative flex flex-col gap-1 sm:h-20 sm:w-20"
+        >
+          {cartCount !== 0 && (
+            <div className="absolute right-0 top-0 flex h-5 w-5 items-center justify-center rounded-full bg-red-500  sm:right-3 sm:top-3">
+              <span className="text-sm text-white">{cartCount}</span>
+            </div>
+          )}
           <ShoppingCart />
           <span className="hidden text-xs sm:block">Cart</span>
         </Button>
@@ -44,9 +57,9 @@ export default function ShoppingCartDrawer() {
           </div>
 
           <div className="border-t px-4 py-6 sm:px-6">
-            <div className="flex justify-between text-base font-medium">
+            <div className="flex justify-between text-base font-semibold">
               <p>Subtotal:</p>
-              <p>[Total Price] &euro;</p>
+              {totalPrice === 0 ? null : <p>{totalPrice} &euro;</p>}
             </div>
             <p className="mt-0.5 text-sm text-muted-foreground">
               Shipping and taxes are calculated at checkout.
