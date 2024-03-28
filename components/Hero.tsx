@@ -2,8 +2,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from './ui/button';
 
-import heroImg from '../public/images/hero.jpg';
-
 export default function Hero() {
   return (
     <section className="mx-auto mb-16 flex max-w-2xl flex-col items-center justify-between gap-2 pt-4 sm:flex-row sm:items-center sm:pt-8 md:max-w-7xl">
@@ -25,10 +23,10 @@ export default function Hero() {
       </div>
       <div className="flex-1 sm:order-2">
         <Image
-          src={heroImg}
+          src="/images/hero.jpg"
           alt="A table and some comfy chairs"
-          // width={500}
-          // height={500}
+          width={500}
+          height={500}
           priority={true}
           className="h-full w-full rounded-md object-cover object-center"
         />

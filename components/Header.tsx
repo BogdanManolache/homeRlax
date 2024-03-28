@@ -3,7 +3,6 @@ import Link from 'next/link';
 
 import Navbar from './navbar/Navbar';
 import NavbarMobile from './navbar/NavbarMobile';
-import logoSvg from '../public/Logo.svg';
 
 import { Button } from './ui/button';
 import { User } from 'lucide-react';
@@ -22,7 +21,13 @@ export default function Header() {
           <span className="hidden text-3xl tracking-wider text-primary md:inline-block">
             HOME
           </span>
-          <Image src={logoSvg} width={80} alt="homeRlax logo image" priority />
+          <Image
+            src="Logo.svg"
+            width={80}
+            height={80}
+            alt="homeRlax logo image"
+            priority
+          />
         </Link>
       </div>
 
@@ -37,13 +42,6 @@ export default function Header() {
           <User />
           <span className="hidden text-xs sm:block">Account</span>
         </Button>
-        {/* <Button
-          variant={'ghost'}
-          className="flex flex-col gap-1 sm:h-20 sm:w-20"
-        >
-          <ShoppingCart />
-          <span className="hidden text-xs sm:block">Cart</span>
-        </Button> */}
         <ShoppingCartDrawer />
       </div>
     </header>

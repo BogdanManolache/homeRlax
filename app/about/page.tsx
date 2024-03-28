@@ -1,5 +1,5 @@
 import Image from 'next/image';
-import aboutImg from '../../public/images/customers.jpg';
+
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -11,8 +11,10 @@ export default function AboutPage() {
     <section className="mx-auto mb-16 mt-8 flex max-w-2xl flex-col justify-between gap-8 p-4 md:max-w-7xl">
       <div className="text-center">
         <Image
-          src={aboutImg}
+          src="/images/customers.jpg"
           alt="Customers relaxing"
+          height={833}
+          width={1000}
           className="mx-auto mb-8 rounded-full shadow-md"
         />
         <h2 className=" text-lg font-semibold uppercase tracking-widest text-muted-foreground">
