@@ -21,6 +21,7 @@ export default function ShoppingCartDrawer() {
     handleCartClick,
     cartDetails,
     totalPrice,
+    redirectToCheckout,
   } = useShoppingCart();
 
   return (
@@ -66,7 +67,7 @@ export default function ShoppingCartDrawer() {
             </p>
 
             <div className="mt-6 flex justify-center">
-              <GoToCheckoutButton variant="default" />
+              <GoToCheckoutButton />
             </div>
 
             <div className="mt-6 flex justify-center text-center text-sm text-muted-foreground">

@@ -6,7 +6,7 @@ import { ShoppingCart } from 'lucide-react';
 import { Button } from '../ui/button';
 
 export default function AddToCartButton({
-  id,
+  price_id,
   imageUrl,
   name,
   description,
@@ -15,7 +15,14 @@ export default function AddToCartButton({
 }: CartItem) {
   const { addItem, handleCartClick } = useShoppingCart();
 
-  const product = { id, name, price, currency, imageUrl, description };
+  const product = {
+    price_id,
+    imageUrl,
+    name,
+    description,
+    currency,
+    price,
+  };
 
   function handleAddToCart() {
     addItem(product);

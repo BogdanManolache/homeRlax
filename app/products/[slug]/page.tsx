@@ -1,6 +1,8 @@
 import AddToCartButton from '@/components/shopping-cart/AddToCartButton';
 import GoToCheckoutButton from '@/components/shopping-cart/GoToCheckoutButton';
+
 import { Button } from '@/components/ui/button';
+
 import { getData } from '@/lib/sanity';
 import { Product } from '@/types';
 import { Truck, User } from 'lucide-react';
@@ -44,7 +46,8 @@ export default async function ProductPage({ params }: ProductPageProps) {
   "imageUrl":image.asset->url,
   "slug":slug.current,
   "categoryName":category->name,
-  description
+  description,
+  price_id
 }
 `;
 
@@ -66,6 +69,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
             className="h-full w-full object-cover object-center"
           />
         </div>
+
         <div className="flex flex-1 flex-col justify-between">
           <div className="mb-2 md:mb-3">
             <span className="text-md mb-2 inline-block uppercase text-muted-foreground">
@@ -97,16 +101,15 @@ export default async function ProductPage({ params }: ProductPageProps) {
           </div>
 
           {true ? (
-            <div className="mb-4 flex gap-4">
+            <div className="mb-4">
               <AddToCartButton
-                id={product._id}
+                price_id={product.price_id}
                 name={product.name}
                 description={product.description}
                 currency="EUR"
                 imageUrl={product.imageUrl}
                 price={product.price}
               />
-              <GoToCheckoutButton variant="outline" />
             </div>
           ) : (
             <Link href="/sign-in" className="mb-4">

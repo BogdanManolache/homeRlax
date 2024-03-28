@@ -1,8 +1,10 @@
+import SkeletonProductList from '@/components/skeletons/SkeletonProductList';
 import ProductsFilter from '@/components/products/ProductsFilter';
 import ProductsList from '@/components/products/ProductsList';
 import { getData } from '@/lib/sanity';
 import { type Product } from '@/types';
 import { Metadata } from 'next';
+import { Suspense } from 'react';
 
 export const metadata: Metadata = {
   title: 'Products',
@@ -42,7 +44,9 @@ export default async function ProductsPage({
         </h2>
         <ProductsFilter />
       </div>
-      <ProductsList productsList={productsList} />
+      <Suspense fallback={<SkeletonProductList productsList={productsList} />}>
+        <ProductsList productsList={productsList} />
+      </Suspense>
     </section>
   );
 }

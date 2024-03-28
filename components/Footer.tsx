@@ -8,7 +8,7 @@ export default function Footer() {
       <div className="flex flex-col items-center gap-4">
         <div className="flex items-center">
           <span className="tracking-wider text-primary">HOME</span>
-          <Image src={logoImg} alt="Logo" />
+          <Image src={logoImg} alt="Logo" className="h-10 w-10" />
         </div>
         <ul className="flex flex-col gap-4 text-sm text-muted-foreground">
           <li className="text-sm">

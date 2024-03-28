@@ -12,10 +12,10 @@ export default function CartProvider({
       mode="payment"
       cartMode="client-only"
       stripe={process.env.NEXT_PUBLIC_STRIPE_KEY as string}
-      successUrl="http://localhost:3000/success"
-      cancelUrl="http://localhost:3000/error"
+      successUrl={`${process.env.NEXT_PUBLIC_HOMERLAX_URL}/stripe/success`}
+      cancelUrl={`${process.env.NEXT_PUBLIC_HOMERLAX_URL}/stripe/error`}
       currency="EUR"
-      billingAddressCollection={true}
+      billingAddressCollection={false}
       shouldPersist={true}
       language="en-US"
     >
