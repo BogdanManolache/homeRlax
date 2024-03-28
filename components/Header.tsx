@@ -22,7 +22,7 @@ export default function Header() {
             HOME
           </span>
           <Image
-            src="Logo.svg"
+            src="/Logo.png"
             width={80}
             height={80}
             alt="homeRlax logo image"
