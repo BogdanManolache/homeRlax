@@ -6,7 +6,7 @@ export const client = createClient({
   projectId: 'u4qzuc0f',
   dataset: 'production',
   apiVersion: '2024-03-06',
-  useCdn: true,
+  useCdn: false,
 });
 
 //
@@ -25,6 +25,7 @@ export async function getData({
   queryParams?: QueryParams;
 }) {
   return await client.fetch(query, queryParams, {
+    cache: 'force-cache',
     next: { tags: ['product'] },
   });
 }
