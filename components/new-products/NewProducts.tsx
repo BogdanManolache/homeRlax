@@ -16,9 +16,6 @@ const query = `
 }
 `;
 
-// // TODO:
-// export const dynamic = 'force-dynamic';
-
 export default async function NewProducts() {
   const newProducts: Product[] = await getData({ query });
 

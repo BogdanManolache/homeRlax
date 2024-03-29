@@ -24,8 +24,6 @@ const query = `
   "categoryName":category->name,
 }
 `;
-// // TODO:
-// export const dynamic = 'force-dynamic';
 
 export default async function ProductsPage({
   searchParams,
@@ -39,7 +37,7 @@ export default async function ProductsPage({
       : products.filter(prod => prod.categoryName === category);
 
   return (
-    <section className="mx-auto mb-16 mt-2 flex max-w-2xl flex-col justify-between gap-4 sm:gap-8 md:max-w-7xl">
+    <section className="mx-auto mb-16 mt-2 flex min-h-screen max-w-2xl flex-col gap-4 sm:gap-8 md:max-w-7xl">
       <div className="sticky top-0 z-50 flex flex-col items-center justify-between gap-4 bg-background py-4 sm:flex-row">
         <h2 className="text-2xl font-semibold text-foreground sm:text-3xl">
           Our <span className="text-primary">comfy</span> products

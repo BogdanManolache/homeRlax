@@ -10,7 +10,7 @@ export default function ProductsListItem({ product }: { product: Product }) {
   return (
     <li className="group">
       <Link href={`/products/${product.slug}`}>
-        <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 xl:aspect-h-8 xl:aspect-w-7">
+        <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg  xl:aspect-h-8 xl:aspect-w-7">
           <Image
             src={product.imageUrl}
             alt={product.name}

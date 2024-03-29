@@ -1,20 +1,21 @@
-import imageUrlBuilder from '@sanity/image-url';
-import next from 'next';
+import 'server-only';
+
+// import imageUrlBuilder from '@sanity/image-url';
 import { QueryParams, createClient } from 'next-sanity';
 
 export const client = createClient({
   projectId: 'u4qzuc0f',
   dataset: 'production',
   apiVersion: '2024-03-06',
-  useCdn: false,
+  useCdn: process.env.NODE_ENV === 'development' ? true : false,
 });
 
 //
-const builder = imageUrlBuilder(client);
+// const builder = imageUrlBuilder(client);
 
-export function urlFor(source: any) {
-  return builder.image(source);
-}
+// export function urlFor(source: any) {
+//   return builder.image(source);
+// }
 
 //
 export async function getData({
