@@ -24,13 +24,15 @@ const query = `
   "categoryName":category->name,
 }
 `;
+// // TODO:
+// export const dynamic = 'force-dynamic';
 
 export default async function ProductsPage({
   searchParams,
 }: ProductsPageProps) {
   const { category } = searchParams;
 
-  const products: Product[] = await getData(query);
+  const products: Product[] = await getData({ query });
   const productsList =
     !category || category === 'All'
       ? products

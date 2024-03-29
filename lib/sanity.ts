@@ -1,5 +1,6 @@
 import imageUrlBuilder from '@sanity/image-url';
-import { createClient } from 'next-sanity';
+import next from 'next';
+import { QueryParams, createClient } from 'next-sanity';
 
 export const client = createClient({
   projectId: 'u4qzuc0f',
@@ -16,6 +17,14 @@ export function urlFor(source: any) {
 }
 
 //
-export async function getData(query: string) {
-  return await client.fetch(query);
+export async function getData({
+  query,
+  queryParams,
+}: {
+  query: string;
+  queryParams?: QueryParams;
+}) {
+  return await client.fetch(query, queryParams, {
+    next: { tags: ['product'] },
+  });
 }

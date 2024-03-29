@@ -16,8 +16,11 @@ const query = `
 }
 `;
 
+// // TODO:
+// export const dynamic = 'force-dynamic';
+
 export default async function NewProducts() {
-  const newProducts: Product[] = await getData(query);
+  const newProducts: Product[] = await getData({ query });
 
   return (
     <section className="mx-auto mb-16 flex max-w-2xl flex-col justify-between gap-4 pt-4 sm:gap-8 sm:pt-8 md:max-w-7xl">

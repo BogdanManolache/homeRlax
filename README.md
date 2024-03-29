@@ -10,13 +10,11 @@ Is will be built using Next.js + TypeScript, Sanity.io as a CMS, Stripe for paym
 Run the development server:
 
 ```bash
+
+npm install
+
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
@@ -24,3 +22,13 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 ## Deployment Link
 
 https://home-rlax.vercel.app/
+
+## Stripe payment test data:
+
+When testing interactively, use a card number, such as 4242 4242 4242 4242.
+
+Use a valid future date, such as 12/28.
+
+Use any three-digit CVC, such as 567
+
+Use any value you like for other form fields.

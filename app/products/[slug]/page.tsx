@@ -1,5 +1,4 @@
 import AddToCartButton from '@/components/shopping-cart/AddToCartButton';
-import GoToCheckoutButton from '@/components/shopping-cart/GoToCheckoutButton';
 
 import { Button } from '@/components/ui/button';
 
@@ -20,16 +19,16 @@ type ProductPageProps = {
 };
 
 export async function generateStaticParams() {
-  const slugs: Slug[] = await getData(
-    `*[_type == "product"]{"slug":slug.current}`,
-  );
+  const slugs: Slug[] = await getData({
+    query: `*[_type == "product"]{"slug":slug.current}`,
+  });
   return slugs;
 }
 
 export async function generateMetadata({ params: { slug } }: ProductPageProps) {
-  const product: Product = await getData(
-    `*[_type == "product" && slug.current == "${slug}"][0]{name}`,
-  );
+  const product: Product = await getData({
+    query: `*[_type == "product" && slug.current == "${slug}"][0]{name}`,
+  });
 
   return {
     title: product.name,
@@ -51,7 +50,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
 }
 `;
 
-  const product: Product = await getData(query);
+  const product: Product = await getData({ query });
 
   return (
     <section
