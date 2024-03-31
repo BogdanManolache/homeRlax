@@ -2,8 +2,8 @@
 
 Work in progress...
 
-This is an e-commerce project for a fictional company called "homeRlax".
-Is will be built using Next.js + TypeScript, Sanity.io as a CMS, Stripe for payments, TailwindCSS and Shadcn/ui for styling. User authentication will be implemented with Clerk.
+This is an e-commerce project for a fictional furniture retailer called "homeRlax".
+It is built using Next.js + TypeScript, Sanity.io as a CMS, Stripe for payments, TailwindCSS and Shadcn/ui for styling. User authentication will be implemented with Clerk.
 
 ## On Your Local Machine
 
