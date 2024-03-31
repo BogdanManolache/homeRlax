@@ -2,11 +2,8 @@
 
 import { CheckIcon } from 'lucide-react';
 import { useEffect } from 'react';
-import { useShoppingCart } from 'use-shopping-cart';
 
 export default function StripeSuccessPage() {
-  const { clearCart } = useShoppingCart();
-
   // clear cart after payment success
   useEffect(() => {
     if (localStorage.getItem('persist:root')) {
