@@ -32,3 +32,11 @@ Use a valid future date, such as 12/28.
 Use any three-digit CVC, such as 567
 
 Use any value you like for other form fields.
+
+## Authentication credentials:
+
+You can sign in with your GitHub / Google account or cand create an account with your email address.
+If you don't want to share your personal information, you cand use the following:
+
+- test@test.com (user)
+- homeRlax1234 (password)

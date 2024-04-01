@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 
 import { getData } from '@/lib/sanity';
 import { Product } from '@/types';
+import { auth } from '@clerk/nextjs';
 import { Truck, User } from 'lucide-react';
 import Image from 'next/image';
 import Link from 'next/link';
@@ -36,6 +37,8 @@ export async function generateMetadata({ params: { slug } }: ProductPageProps) {
 }
 
 export default async function ProductPage({ params }: ProductPageProps) {
+  const { userId } = auth();
+
   const { slug } = params;
   const query = `
 *[_type == "product" && slug.current == "${slug}"][0]{
@@ -99,7 +102,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
             <span className="text-xs">2-4 Day Shipping</span>
           </div>
 
-          {true ? (
+          {userId ? (
             <div className="mb-4">
               <AddToCartButton
                 price_id={product.price_id}
@@ -111,9 +114,9 @@ export default async function ProductPage({ params }: ProductPageProps) {
               />
             </div>
           ) : (
-            <Link href="/sign-in" className="mb-4">
+            <Link href="/sign-in#signIn" className="mb-4">
               <Button className="flex items-center gap-1">
-                <span className="capitalize">Log In to buy</span>
+                <span className="capitalize">Sign In to buy</span>
                 <User />
               </Button>
             </Link>

@@ -27,7 +27,11 @@ export default function GoToCheckoutButton() {
   }
 
   return (
-    <Button className="flex items-center gap-1" onClick={handleCheckout}>
+    <Button
+      className="flex items-center gap-1"
+      onClick={handleCheckout}
+      disabled={cartCount === 0}
+    >
       <span className="capitalize">Go to Checkout</span>
       <ArrowRightIcon />
     </Button>
