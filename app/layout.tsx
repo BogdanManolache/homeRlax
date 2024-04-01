@@ -26,7 +26,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <ClerkProvider>
+    <ClerkProvider afterSignInUrl="/products" afterSignUpUrl="/products">
       <html lang="en" suppressHydrationWarning className={poppins.className}>
         <body
           className={`${poppins.className}flex min-h-screen max-w-2xl flex-col  bg-background text-foreground md:max-w-full`}
