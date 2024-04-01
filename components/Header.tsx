@@ -4,17 +4,10 @@ import Link from 'next/link';
 import Navbar from './navbar/Navbar';
 import NavbarMobile from './navbar/NavbarMobile';
 
-import { Button } from './ui/button';
-import { User } from 'lucide-react';
 import { ModeToggle } from './ModeToggle';
 import ShoppingCartDrawer from './shopping-cart/ShoppingCartDrawer';
-import {
-  SignInButton,
-  SignedIn,
-  SignedOut,
-  UserButton,
-  auth,
-} from '@clerk/nextjs';
+import { auth } from '@clerk/nextjs';
+import UserInfo from './UserInfo';
 
 export default function Header() {
   const { userId } = auth();
@@ -48,20 +41,7 @@ export default function Header() {
 
         <ShoppingCartDrawer isLoggedIn={isLoggedIn} />
 
-        <SignedIn>
-          <UserButton />
-        </SignedIn>
-        <SignedOut>
-          <SignInButton>
-            <Button
-              variant={'ghost'}
-              className="flex flex-col gap-1 sm:h-20 sm:w-20"
-            >
-              <User />
-              <span className="hidden text-xs sm:block">Sign In</span>
-            </Button>
-          </SignInButton>
-        </SignedOut>
+        <UserInfo />
       </div>
     </header>
   );
