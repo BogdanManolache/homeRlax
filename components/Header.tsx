@@ -8,8 +8,18 @@ import { Button } from './ui/button';
 import { User } from 'lucide-react';
 import { ModeToggle } from './ModeToggle';
 import ShoppingCartDrawer from './shopping-cart/ShoppingCartDrawer';
+import {
+  SignInButton,
+  SignedIn,
+  SignedOut,
+  UserButton,
+  auth,
+} from '@clerk/nextjs';
 
 export default function Header() {
+  const { userId } = auth();
+  const isLoggedIn = Boolean(userId);
+
   return (
     <header className="mx-auto flex max-w-2xl items-center justify-between border-b pr-4 sm:pr-6 md:max-w-7xl">
       <div className="flex items-center">
@@ -33,16 +43,25 @@ export default function Header() {
 
       <Navbar />
 
-      <div className="flex items-center gap-0.5 md:gap-2">
+      <div className="flex items-center gap-1 md:gap-2">
         <ModeToggle />
-        <Button
-          variant={'ghost'}
-          className="flex flex-col gap-1 sm:h-20 sm:w-20"
-        >
-          <User />
-          <span className="hidden text-xs sm:block">Account</span>
-        </Button>
-        <ShoppingCartDrawer />
+
+        <ShoppingCartDrawer isLoggedIn={isLoggedIn} />
+
+        <SignedIn>
+          <UserButton />
+        </SignedIn>
+        <SignedOut>
+          <SignInButton>
+            <Button
+              variant={'ghost'}
+              className="flex flex-col gap-1 sm:h-20 sm:w-20"
+            >
+              <User />
+              <span className="hidden text-xs sm:block">Sign In</span>
+            </Button>
+          </SignInButton>
+        </SignedOut>
       </div>
     </header>
   );

@@ -1,8 +1,11 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from './ui/button';
+import { auth } from '@clerk/nextjs';
 
 export default function Hero() {
+  const { userId } = auth();
+
   return (
     <section className="mx-auto mb-16 flex max-w-2xl flex-col items-center justify-between gap-2 pt-4 sm:flex-row sm:items-center sm:pt-8 md:max-w-7xl">
       <div className="order-last flex flex-1 flex-col justify-center gap-8 sm:order-1 sm:pl-12">
@@ -16,9 +19,11 @@ export default function Hero() {
             <Button>Shop Now</Button>
           </Link>
 
-          <Link href="/sign-in">
-            <Button variant="outline">Sign In</Button>
-          </Link>
+          {!userId && (
+            <Link href="/sign-in#signIn">
+              <Button variant="outline">Sign In</Button>
+            </Link>
+          )}
         </div>
       </div>
       <div className="flex-1 sm:order-2">

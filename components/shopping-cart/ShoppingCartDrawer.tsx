@@ -14,14 +14,17 @@ import { ShoppingCart } from 'lucide-react';
 import GoToCheckoutButton from './GoToCheckoutButton';
 import ShoppingCartEntry from './ShoppingCartEntry';
 
-export default function ShoppingCartDrawer() {
+export default function ShoppingCartDrawer({
+  isLoggedIn,
+}: {
+  isLoggedIn: boolean;
+}) {
   const {
     cartCount,
     shouldDisplayCart,
     handleCartClick,
     cartDetails,
     totalPrice,
-    redirectToCheckout,
   } = useShoppingCart();
 
   return (
@@ -67,7 +70,22 @@ export default function ShoppingCartDrawer() {
             </p>
 
             <div className="mt-6 flex justify-center">
-              <GoToCheckoutButton />
+              {isLoggedIn ? (
+                <GoToCheckoutButton />
+              ) : (
+                <p>
+                  To finish your purchase you must{' '}
+                  <Link href="/sign-in">
+                    <Button
+                      variant="link"
+                      className="p-0"
+                      onClick={() => handleCartClick()}
+                    >
+                      sign in
+                    </Button>
+                  </Link>
+                </p>
+              )}
             </div>
 
             <div className="mt-6 flex justify-center text-center text-sm text-muted-foreground">
