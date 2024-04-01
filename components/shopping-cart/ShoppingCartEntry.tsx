@@ -39,7 +39,7 @@ export default function ShoppingCartEntry({ entry }: ShoppingCartEntryProps) {
           <p>{entry.price * entry.quantity} &euro;</p>
         </div>
 
-        <div className="flex flex-1 items-end justify-between text-sm">
+        <div className="flex flex-1 items-center justify-between text-sm">
           <p className="flex-1 text-muted-foreground">
             {entry.quantity} {entry.quantity > 1 ? 'items' : 'item'}
           </p>
@@ -47,17 +47,17 @@ export default function ShoppingCartEntry({ entry }: ShoppingCartEntryProps) {
           <div className="flex flex-1 items-center justify-center gap-1 sm:gap-2">
             <Button
               variant="outline"
-              className="flex h-6 w-6 items-center justify-center rounded-full p-0 text-sm sm:h-8 sm:w-8 sm:text-lg"
-              onClick={() => incrementItem(entry.id)}
-            >
-              <span>&#43;</span>
-            </Button>
-            <Button
-              variant="outline"
-              className="h-6 w-6 items-center justify-center rounded-full p-0 text-sm sm:h-8 sm:w-8 sm:text-lg"
+              className="h-8 w-8 items-center justify-center rounded-full p-0 text-sm sm:h-8 sm:w-8 sm:text-lg"
               onClick={() => decrementItem(entry.id)}
             >
               <span>&minus;</span>
+            </Button>
+            <Button
+              variant="outline"
+              className="flex h-8 w-8 items-center justify-center rounded-full p-0 text-sm sm:h-8 sm:w-8 sm:text-lg"
+              onClick={() => incrementItem(entry.id)}
+            >
+              <span>&#43;</span>
             </Button>
           </div>
 
