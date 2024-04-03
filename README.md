@@ -1,23 +1,7 @@
 ## About
 
-Work in progress...
-
 This is an e-commerce project for a fictional furniture retailer called "homeRlax".
-It is built using Next.js + TypeScript, Sanity.io as a CMS, Stripe for payments, TailwindCSS and Shadcn/ui for styling. User authentication will be implemented with Clerk.
-
-## On Your Local Machine
-
-Run the development server:
-
-```bash
-
-npm install
-
-npm run dev
-
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+It is built using Next.js + TypeScript, Sanity.io as a CMS, Stripe for payments, TailwindCSS and Shadcn/ui for styling. User authentication is implemented with Clerk.
 
 ## Deployment Link
 
@@ -40,3 +24,21 @@ If you don't want to share your personal information, you cand use the following
 
 - test@test.com (user)
 - homeRlax1234 (password)
+
+### Local machine:
+
+To run the development server:
+
+```bash
+npm install
+
+npm run dev
+```
+
+Open http://localhost:3000 with your browser to see the result.
+
+If you want to run this project on your local machine, and for it work as expected, you'll need to create accounts / your own projects for Sanity, Stripe, and Clerk
+
+- https://www.sanity.io/docs/sanity-studio
+- https://docs.stripe.com/
+- https://clerk.com/docs
