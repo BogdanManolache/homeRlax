@@ -37,7 +37,7 @@ npm run dev
 
 Open http://localhost:3000 with your browser to see the result.
 
-If you want to run this project on your local machine, and for it work as expected, you'll need to create accounts / your own projects for Sanity, Stripe, and Clerk
+If you want to run this project on your local machine, and for it to work as expected, you'll need to create accounts / your own projects for Sanity, Stripe, and Clerk
 
 - https://www.sanity.io/docs/sanity-studio
 - https://docs.stripe.com/
