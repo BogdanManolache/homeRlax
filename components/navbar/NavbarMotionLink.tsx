@@ -68,7 +68,7 @@ export default function NavbarMotionLink({
         href={link.href}
         className={cn(
           'relative rounded-md px-4 py-2 font-medium text-foreground transition-all duration-300 ease-out hover:bg-primary/20 lg:text-lg',
-          pathname === link.href ? 'bg-primary/50' : '',
+          pathname === link.href ? 'bg-primary/10' : '',
         )}
       >
         <motion.span className="relative z-10">{link.name}</motion.span>
@@ -76,7 +76,7 @@ export default function NavbarMotionLink({
           <motion.div
             transition={{ type: 'spring' }}
             layoutId="underline"
-            className="absolute bottom-0 left-0 h-full w-full rounded-md bg-primary/20"
+            className="absolute bottom-0 left-0 h-full w-full rounded-md bg-primary/15"
           ></motion.div>
         ) : null}
       </MotionLink>
