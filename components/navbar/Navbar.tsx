@@ -2,6 +2,7 @@
 
 import { usePathname } from 'next/navigation';
 import Link from 'next/link';
+import { cn } from '@/lib/utils';
 
 const links = [
   { name: 'Home', href: '/' },
@@ -18,7 +19,10 @@ export default function Navbar() {
         <Link
           key={index}
           href={link.href}
-          className={`px-4 py-2 font-medium lg:text-lg ${pathname === link.href ? ' text-primary' : 'text-foreground duration-200 hover:text-primary'}`}
+          className={cn(
+            'px-4 py-2 font-medium text-foreground duration-200 hover:text-primary lg:text-lg',
+            pathname === link.href ? 'text-primary' : '',
+          )}
         >
           {link.name}
         </Link>
