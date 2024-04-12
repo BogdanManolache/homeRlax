@@ -29,7 +29,7 @@ export default function RootLayout({
     <ClerkProvider afterSignInUrl="/products" afterSignUpUrl="/products">
       <html lang="en" suppressHydrationWarning className={poppins.className}>
         <body
-          className={`${poppins.className}flex min-h-screen max-w-2xl flex-col  bg-background text-foreground md:max-w-full`}
+          className={`${poppins.className}flex min-h-screen max-w-2xl flex-col md:max-w-full`}
         >
           <ThemeProvider
             attribute="class"
